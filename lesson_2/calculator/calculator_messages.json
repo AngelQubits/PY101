@@ -1,5 +1,6 @@
 {
-    "message1": "Please enter your first number: ",
+"english":
+    {"message1": "Please enter your first number: ",
     "message2": "Please Enter A Valid Number: ",
     "message3": "Thank You! Please enter your second number: ",
     "message4": "Please select the number of the operation you would like to perform: \n 1) Add \n 2) Subtract \n 3) Divide \n 4) Multiply\n",
@@ -8,5 +9,18 @@
     "message7": "You have reached the end of our program.  Would you like to start again? \n Enter (1) for Yes \n Enter (2) for No",
     "message8": "Thank You! Our program has now concluded. Good Bye!",
     "message9": "Please Enter a Valid Entry. \n Enter (1) for Yes \n Enter (2) for No",
-    "welcome": "Welcome to Calculator!"
+    "welcome": "Welcome to Calculator!"},
+
+"spanish":
+    {"message1": "Por favor, introduzca su primer número: ",
+   "message2": "Por favor, introduzca un número válido: ",
+   "message3": "¡Gracias! Por favor, introduzca su segundo número: ",
+   "message4": "Por favor, seleccione el número de la operación que desea realizar: \n 1) Sumar \n 2) Restar \n 3) Dividir \n 4) Multiplicar\n",
+   "message5": "Por favor, introduzca un número válido [1, 2, 3, 4]",
+   "message6": "Su resultado es: {output} \n",
+   "message7": "Ha llegado al final de nuestro programa. ¿Le gustaría empezar de nuevo? \n Introduzca (1) para Sí \n Introduzca (2) para No",
+   "message8": "¡Gracias! Nuestro programa ha concluido. ¡Adiós!",
+   "message9": "Por favor, introduzca una entrada válida. \n Introduzca (1) para Sí \n Introduzca (2) para No",
+   "welcome": "¡Bienvenido al Calculadora!"}
+
 }

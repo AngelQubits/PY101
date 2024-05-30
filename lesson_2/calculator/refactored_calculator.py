@@ -1,7 +1,9 @@
 '''
 This refactored calculator is using match case statement.
-Thus it requires python 3.10.xx or newer.
+Thus it requires python 3.10.xx or newer. Please remember to set language 
+on line 5. Choose "english" or "spanish"
 '''
+language = "english" #Set Program Language
 
 def prompt(message):
     '''This function is meant to add an arrow to all
@@ -17,31 +19,35 @@ def is_invalid(number_str):
         return True
     return False
 
+def messages(message):
+    return MESSAGES[language][message]
+
+
 def calc_core():
    '''This function is the core program of the calculator and can be run
    again by invoking it'''
 
-   prompt(data["message1"])
+   prompt(messages("message1"))
    number1 = input()
    print()
    while is_invalid(number1):
-       prompt(data["message2"])
+       prompt(messages("message2"))
        number1 = input()
    
-   prompt(data["message3"])
+   prompt(messages("message3"))
    number2 = input()
    print()
    
    while is_invalid(number2):
-       prompt(data["message2"])
+       prompt(messages("message2"))
        number2 = input()
    
-   prompt(data["message4"])
+   prompt(messages("message4"))
    operation = input()
    print()
    
    while operation not in ['1', '2', '3', '4']:
-        prompt(data["message5"])
+        prompt(messages("message5"))
         operation = input()
    match operation:
        case '1':
@@ -56,20 +62,21 @@ def calc_core():
 
 import json
 with open('calculator_messages.json', 'r') as file:
-    data = json.load(file)
- 
-prompt(data["welcome"])
+    MESSAGES = json.load(file)
+
+
+
+prompt(messages("welcome"))
 calc_core()
 
 while True:
- prompt(data["message7"])
+ prompt(messages("message7"))
  again = input()
  if again == '2':
-  prompt(data["message8"])
+  prompt(messages("message8"))
   break
  if again == '1':
   calc_core()
   continue
  else:
-  prompt(data["message9"])
-  again = input()
+  prompt(messages("message9"))
