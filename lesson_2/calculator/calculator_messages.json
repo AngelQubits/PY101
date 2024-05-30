@@ -1,0 +1,12 @@
+{
+    "message1": "Please enter your first number: ",
+    "message2": "Please Enter A Valid Number: ",
+    "message3": "Thank You! Please enter your second number: ",
+    "message4": "Please select the number of the operation you would like to perform: \n 1) Add \n 2) Subtract \n 3) Divide \n 4) Multiply\n",
+    "message5": "Please Enter A Valid Number [1, 2, 3, 4]",
+    "message6": "Your result is: {output} \n",
+    "message7": "You have reached the end of our program.  Would you like to start again? \n Enter (1) for Yes \n Enter (2) for No",
+    "message8": "Thank You! Our program has now concluded. Good Bye!",
+    "message9": "Please Enter a Valid Entry. \n Enter (1) for Yes \n Enter (2) for No",
+    "welcome": "Welcome to Calculator!"
+}
