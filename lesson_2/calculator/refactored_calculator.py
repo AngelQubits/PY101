@@ -1,20 +1,21 @@
 '''
-This refactored calculator is using match case statement.
-Thus it requires python 3.10.xx or newer. Please remember to set language 
-on line 5. Choose "english" or "spanish"
++ This refactored calculator is using match case statement.
+Thus it requires python 3.10.xx or newer. 
+
++ Please remember to set language on line 5. Choose "english" or "spanish"
 '''
 language = "english" #Set Program Language
 
 def prompt(message):
-    '''This function is meant to add an arrow to all
-	   program generated messages'''
+    '''+ This function is meant to add an arrow to all program generated 
+    messages'''
     print(f'=> {message}')
 
 def is_invalid(number_str):
-    '''This function is meant to check the validity of user input, 
+    '''+ This function is meant to check the validity of user input, 
     bypass ValueError and prompt user to re-enter a valid input'''
     try:
-        int(number_str)
+        round(float(number_str), 0)
     except ValueError:
         return True
     return False
@@ -24,7 +25,7 @@ def messages(message):
 
 
 def calc_core():
-   '''This function is the core program of the calculator and can be run
+   '''+ This function is the core program of the calculator and can be run
    again by invoking it'''
 
    prompt(messages("message1"))
@@ -51,13 +52,13 @@ def calc_core():
         operation = input()
    match operation:
        case '1':
-           output = int(number1) + int(number2)
+           output = round(float(number1), 0) + round(float(number2), 0)
        case '2':
-           output = int(number1) - int(number2)
+           output = round(float(number1), 0) - round(float(number2), 0)
        case '3':
-           output = int(number1) / int(number2)
+           output = round(float(number1), 0) / round(float(number2), 0)
        case '4':
-           output = int(number1) * int(number2)
+           output = round(float(number1), 0) * round(float(number2), 0)
    prompt(f'Your result is: {output} \n')
 
 import json
