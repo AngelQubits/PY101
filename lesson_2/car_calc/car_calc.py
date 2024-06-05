@@ -92,7 +92,6 @@ def play_again():
         print("Would You like to continue calculating?")
         response = input()
         if response.lower() in ['yes', 'y']:
-            #import os
             os.system('clear')
             break
         if response.lower() in ['no', 'n']:
