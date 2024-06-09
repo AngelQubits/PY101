@@ -2,8 +2,10 @@
 loans and positive interest loans'''
 
 import os
+# from decimal import *
+# getcontext().prec = 3
 
-def get_monthly_payment():
+def get_monthly_payment(loan_amount, m_rate, m_duration):
     '''monthly_payment function used to derive the monthly payment calculation &
 print result to terminal in user friendly format'''
     if m_rate == 0:
@@ -12,8 +14,8 @@ print result to terminal in user friendly format'''
         monthly_payment = round(loan_amount * (m_rate /
         (1 - (1 + m_rate) ** (-m_duration))), 2)
     f_monthly_payment = '{:,}'.format(monthly_payment)
-    res = round(monthly_payment * m_duration, 2)
-    output = '{:,}'.format(res)
+    res = monthly_payment * m_duration
+    output = f'{res:,}'
     print()
     print("*********************\nYour Monthly Payment Will Be: $",
     f_monthly_payment)
@@ -34,8 +36,7 @@ so it is within program limits (i.e. car loans greater than $499)'''
                 print("Invalid Entry. Please enter value greater than $500 "
                 + "(Only Numbers): ")
             else:
-                values.append(loan_amt)
-                break
+                return loan_amt
         except ValueError:
             print("Please Enter a Valid Number Greater Than $500: ")
 
@@ -54,8 +55,7 @@ so it is within program limits for rates equal to or greater than zero'''
                 print("Invalid Entry. Please Enter 0 for No Interest Loan, or "
                 + "(i.e. 4.45 for 4.45%): ")
             else:
-                values.append(monthly_rate)
-                break
+                return monthly_rate
         except ValueError:
             print("Invalid Entry. Please Enter Value Greater Than 0 " +
                 "(i.e. 4.45 for 4.45%): ")
@@ -72,18 +72,17 @@ limits of 1 year thru 7 year loans'''
             if monthly_duration not in [12, 24, 36, 48, 60, 72, 84]:
                 print("Invalid Entry. Please Enter a Valid Number From 1-7: ")
             else:
-                values.append(monthly_duration)
-                break
+                return monthly_duration
         except ValueError:
             print("Invalid Entry. Please Enter a Valid Number From 1-7: ")
 
 
-def core():
-    '''core program function used to extract code into simple 
-    helper functions'''
-    get_loan_amount()
-    get_monthly_rate()
-    get_monthly_duration()
+# def core():
+#     '''core program function used to extract code into simple 
+#     helper functions'''
+#     get_loan_amount()
+#     get_monthly_rate()
+#     get_monthly_duration()
 
 def play_again():
     '''This function contains the repeat functionality for the program. 
@@ -109,8 +108,10 @@ print("Welcome to Our Car Loan Calculator!")
 go_again = True # Main Loop value for repetitive calculations
 
 while go_again is True:
-    values = [] #list containing variables used in calculations
-    core()
-    loan_amount, m_rate, m_duration = values
-    get_monthly_payment()
+    # values = [] #list containing variables used in calculations
+    #core()
+    loan_amount = get_loan_amount()
+    m_rate = get_monthly_rate()
+    m_duration = get_monthly_duration()
+    get_monthly_payment(loan_amount, m_rate, m_duration)
     play_again()
