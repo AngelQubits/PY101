@@ -13,7 +13,7 @@ def run_program():
     while True:
         player_choice = user_selection()
         computer_choice = computer_selection()
-        prompt('Press Enter To See Who Won: ')
+        prompt('Press Enter To See Who Won This Game: ')
         input()
         game_winner = game_winner_logic(player_choice, computer_choice)
         display_winner(game_winner, player_choice, computer_choice)
@@ -32,6 +32,13 @@ def user_selection():
     prompt('Great Lets Play!!!')
     prompt('Please Make Your Choice: (Rock, Paper or Scissors)\n')
     player_entered = input().lower()
+    match player_entered[0]:
+        case 'r':
+            player_entered = 'rock'
+        case 'p':
+            player_entered = 'paper'
+        case 's':
+            player_entered = 'scissors'
     while True:
         if player_entered not in POSSIBLE_OUTCOME:
             prompt(f'{player_entered} is NOT a valid Entry.'
